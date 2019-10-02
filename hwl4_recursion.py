@@ -90,8 +90,8 @@ a = [
 ]
 
 lst = []
-def add(a):
-    lst.append(a)
+def add(b):
+    lst.append(b)
     return
 
 def rec(a):
