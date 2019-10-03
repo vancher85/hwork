@@ -42,7 +42,7 @@ from sys import getsizeof
 #     if (a or b) and not (a and b):
 #         return True
 #     return False
-
+#
 # lambda_func = (lambda a,b: True if (a or b) and not (a and b) else False)
 #
 # print(lambda_func(True, False))
