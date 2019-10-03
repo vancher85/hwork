@@ -76,35 +76,36 @@
 
 ##################################
 # optimization - rec() without lst in arg
-a = [
-    {
-        (1, 2): [
-            {'b': 1, 'c': 2},
-            'hello world'
-        ],
-        'b': {'d': 3}
-    },
-    4,
-    5,
-    ['hello', 'again']
-]
-
-lst = []
-def add(b):
-    lst.append(b)
-    return
-
-def rec(a):
-    if isinstance(a, (list, tuple)):
-        for i in a:
-            rec(i)
-    elif isinstance(a, dict):
-        for i, j in a.items():
-            rec(i)
-            rec(j)
-    elif isinstance(a, str):
-        add(a)
-    else:
-        add(a)
-rec(a)
-print(lst)
+# a = [
+#     {
+#         (1, 2): [
+#             {'b': 1, 'c': 2},
+#             'hello world'
+#         ],
+#         'b': {'d': 3}
+#     },
+#     4,
+#     5,
+#     ['hello', 'again']
+# ]
+#
+# lst = []
+# def add(b):
+#     lst.append(b)
+#     return
+#
+# def rec(a):
+#     if isinstance(a, (list, tuple)):
+#         for i in a:
+#             rec(i)
+#     elif isinstance(a, dict):
+#         for i, j in a.items():
+#             rec(i)
+#             rec(j)
+#     elif isinstance(a, str):
+#         add(a)
+#     else:
+#         add(a)
+# rec(a)
+# print(lst)
+# print(lst)
