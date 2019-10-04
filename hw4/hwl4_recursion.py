@@ -76,18 +76,18 @@
 
 ##################################
 # optimization - rec() without lst in arg
-# a = [
-#     {
-#         (1, 2): [
-#             {'b': 1, 'c': 2},
-#             'hello world'
-#         ],
-#         'b': {'d': 3}
-#     },
-#     4,
-#     5,
-#     ['hello', 'again']
-# ]
+a = [
+    {
+        (1, 2): [
+            {'b': 1, 'c': 2},
+            'hello world'
+        ],
+        'b': {'d': 3}
+    },
+    4,
+    5,
+    ['hello', 'again']
+]
 #
 # lst = []
 # def add(b):
@@ -109,3 +109,17 @@
 # rec(a)
 # print(lst)
 # print(lst)
+
+def rec(a):
+    result = []
+    if isinstance(a, (list, tuple)):
+        for i in a:
+            result.extend(rec(i))
+        return result
+    if isinstance(a, dict):
+        for i, j in a.items():
+            result.extend(rec(i))
+            result.extend(rec(j))
+        return result
+    return [a]
+rec(a)
