@@ -88,6 +88,7 @@ a = [
     5,
     ['hello', 'again']
 ]
+
 #
 # lst = []
 # def add(b):
@@ -122,4 +123,4 @@ def rec(a):
             result.extend(rec(j))
         return result
     return [a]
-rec(a)
+print(rec(a))
