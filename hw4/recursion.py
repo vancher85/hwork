@@ -29,22 +29,31 @@ print(rec(a))
 print(list(rec(a)))
 [1, 2, 'b', 1, 'c', 2, 'hello world', 'b', 'd', 3, 4, 5, 'hello', 'again']"""
 
-# a = [
-#     5,
-#     ['hello', 'again']
-# ]
-# def rec(a):
-#     # lst = []
-#     if isinstance(a, (list)):
-#         b = (rec(i) for i in a)
-#         return b
-#     return a
-# print(rec(a))
-# print(list(rec(a)))
 
-
-
-
+a = [
+    {
+        (1, 2): [
+            {'b': 1, 'c': 2},
+            'hello world'
+        ],
+        'b': {'d': 3}
+    },
+    4,
+    5,
+    ['hello', 'again']
+]
+def rec(a):
+    result = []
+    if isinstance(a, (list, tuple)):
+        # b = (j for i in a for j in rec(i))
+        b = (j for i in a for j in rec(i))
+        return b
+    if isinstance(a, dict):
+        b = (j for i in a.items() for j in rec(i))
+        return b
+    return [a]
+print(rec(a))
+print(list(rec(a)))
 
 # [11:05 AM] Roman Romanyuk
 # первое
@@ -105,136 +114,3 @@ print(list(rec(a)))
 #
 # [11:12 AM] Roman Romanyuk
 # 'b' - это тебе все портит
-#
-# [11:12 AM] Roman Romanyuk
-# нзчт
-
-
-
-# a = [
-#     {
-#         (1, 2): [
-#             {'b': 1, 'c': 2},
-#             'hello world'
-#         ],
-#         'b': {'d': 3}
-#     },
-#     4,
-#     5,
-#     ['hello', 'again']
-# ]
-# def rec(a):
-#     # lst = []
-#     if isinstance(a, (list, tuple)):
-#         b = [rec(i) for i in a]
-#         return b
-#     if isinstance(a, dict):
-#         b = [rec(i) for i in a.items()]
-#         return b
-#     return a
-# rec(a)
-# print(rec(a))
-# # print(list(rec(a)))
-
-
-
-# def rec(a):
-#     # lst = []
-#     if isinstance(a, (list, tuple)):
-#         for i in a:
-#             b = (rec(i) for i in a)
-#             # print(b)
-#             # print(list(b))
-#         return b
-#     if isinstance(a, dict):
-#         for i in a.items():
-#             b = (rec(i) for i in a.items())
-#             print(b)
-#             print(list(b))
-#         return b
-#     return a
-# print(rec(a))
-# print(list(rec(a)))
-# # print(list(rec(a)))
-
-
-
-
-# def rec(a):
-#     # lst = []
-#     if isinstance(a, (list, tuple)):
-#         b = (rec(i) for i in a)
-#         print(b)
-#         print(list(b))
-#         return b
-#     if isinstance(a, dict):
-#         b = (rec(i) for i in a.items())
-#         print(b)
-#         print(list(b))
-#         return b
-#     return a
-# print(rec(a))
-# print(list(rec(a)))
-
-
-
-
-
-# a = [
-#     {
-#         (1, 2): [
-#             {'b': 1, 'c': 2},
-#             'hello world'
-#         ],
-#         'b': {'d': 3}
-#     },
-#     4,
-#     5,
-#     ['hello', 'again']
-# ]
-# def rec(a):
-#     # lst = []
-#     if isinstance(a, (list, tuple)):
-#         for i in a:
-#             b = (i for i in rec(i))
-#         return b
-#         # return lst
-#     if isinstance(a, dict):
-#         for i in a.items():
-#             b = [i for i in rec(i)]
-#         return b
-#     return [a]
-# print(rec(a))
-# print(list(rec(a)))
-# # print(list(rec(a)))
-
-
-
-
-# a = [
-#     {
-#         (1, 2): [
-#             {'b': 1, 'c': 2},
-#             'hello world'
-#         ],
-#         'b': {'d': 3}
-#     },
-#     4,
-#     5,
-#     ['hello', 'again']
-# ]
-# def rec(a):
-#     lst = []
-#     if isinstance(a, (list, tuple)):
-#         b = (rec(i) for i in a)
-#         print(b)
-#         return b
-#     if isinstance(a, dict):
-#         b = (rec(i) for i in a.items())
-#         return b
-#     else:
-#         lst.append(a)
-#         return lst
-# print(rec(a))
-# print(list(rec(a)))
-
