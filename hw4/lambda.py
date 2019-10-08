@@ -5,7 +5,7 @@ json_writer({'key': 'value'}, 'example.json')
 Дикт {'key': 'value'} должен быть записан в файл example.json"""
 
 from json import dump
-(lambda dict, file: dump(dict, open(file, 'w')))({'dict': 1, 'dictionary': 8}, "text.json")
+(lambda dict1, file: dump(dict1, open(file, 'w')))({'dic1t': 1, 'dictionary': 8}, "text.json")
 
 # json_writer = lambda dict, file: dump(dict, open(file, 'w'))
 # json_writer({'dict': 1, 'dictionary': 7}, "text.json")
