@@ -1,3 +1,4 @@
+# # good example to practice MOR
 # class Parent1:
 #     def __init__(self):
 #         self.a = None
@@ -15,40 +16,49 @@
 #         return self.b
 #
 # class Child(Parent1,Parent2):
-#     pass
+#     def __init__(self):
+#         super(Child, self).__init__()
+#         Parent2.__init__(self)
 #
 # c = Child()
+# c.a = '2'
 # c.b = 'c'
 # print(c.meth1())
 # print(c.meth2())
 
 
-# class Parent1:
-#     def __init__(self):
-#         self.a = 'a'
-#     def meth1(self):
-#         print('I\'m method1')
-#         return self.a
-# class Parent2:
-#     def __init__(self):
-#         self.b = 'b'
-#     def meth2(self):
-#         print('I\'m method2')
-#         return self.b
-# # d = Parent1()
-# # print(d.meth1())
-#
-# class Child(Parent1, Parent2):
-#     def __init__(self):
-#         self.c = 'c'
-#         super(Child, self).__init__()
-#         Parent2.__init__(self)
-#     def meth1(self):
-#         return self.c
-#     def meth3(self):
-#         result = super(Child, self).meth1()
-#         print(result)
-#         return result
-#     pass
-# c = Child()
-# print(c.meth2())
+class Bird:
+    def __init__(self):
+        self.name1 = 'bird'
+    def bird_name(self):
+        print('I\'m method1')
+        return self.name1
+
+class Animals:
+    def __init__(self):
+        self.name2 = 'animal'
+    def animal_name(self):
+        print('I\'m method2')
+        return self.name2
+
+class Pet(Bird, Animals):
+    def __init__(self, pet_type=None):
+        self.pet_type = pet_type
+        super(Pet, self).__init__()
+        Animals.__init__(self)
+    def pet_voice(self):
+        if self.pet_type == "dog":
+            print(c.name2, "wow!")
+        else:
+            print(c.name1, "4ik 4rik!")
+c = Pet(pet_type='bird')
+c.pet_voice()
+
+a = Animals()
+print(a.animal_name())
+# print(c.name1)
+# print(c.name2)
+# print(c.bird_name())
+# print(c.animal_name())
+
+
