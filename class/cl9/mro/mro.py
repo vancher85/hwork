@@ -27,35 +27,36 @@
 # print(c.meth2())
 
 
-class Bird:
-    def __init__(self):
-        self.name1 = 'bird'
-    def bird_name(self):
-        print('I\'m method1')
-        return self.name1
-
-class Animals:
-    def __init__(self):
-        self.name2 = 'animal'
-    def animal_name(self):
-        print('I\'m method2')
-        return self.name2
-
-class Pet(Bird, Animals):
-    def __init__(self, pet_type=None):
-        self.pet_type = pet_type
-        super(Pet, self).__init__()
-        Animals.__init__(self)
-    def pet_voice(self):
-        if self.pet_type == "dog":
-            print(c.name2, "wow!")
-        else:
-            print(c.name1, "4ik 4rik!")
-c = Pet(pet_type='bird')
-c.pet_voice()
-
-a = Animals()
-print(a.animal_name())
+# class Bird:
+#     def __init__(self):
+#         self.name1 = 'bird'
+#     def bird_name(self):
+#         print('I\'m method1')
+#         return self.name1
+#
+# class Animals:
+#     def __init__(self):
+#         self.name2 = 'animal'
+#     def animal_name(self):
+#         print('I\'m method2')
+#         return self.name2
+#
+# class Pet(Bird, Animals):
+#     def __init__(self, pet_type=None):
+#         self.pet_type = pet_type
+#         super(Pet, self).__init__()
+#         Animals.__init__(self)
+#     def pet_voice(self):
+#         if self.pet_type == "dog":
+#             print(c.name2, "wow!")
+#         else:
+#             print(c.name1, "4ik 4rik!")
+# c = Pet(pet_type='bird')
+# c.pet_voice()
+#
+# a = Animals()
+# print(a.animal_name())
+# print(Pet.__mro__)
 # print(c.name1)
 # print(c.name2)
 # print(c.bird_name())

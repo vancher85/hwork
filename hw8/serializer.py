@@ -36,3 +36,17 @@ d.loads(data='{"1": 2}', content_type='json')
 
 
 # d.loads(data='[1,2]', content_type='json')
+
+
+# [10/23 2:30 PM] Roman Romanyuk
+#     1. Создать класс для сериализации данных Serializer. Объект класса принимает на вход сложный объект(list, dict, etc), и обладает методами loads и dumps. Эти методы работают так же как и json.loads и json.dumps.
+# 2. dumps принимает на вход один параметр - contetnt_type(это может быть json или pickle) и на выходе возвращает строку в нужном формате(json или pickle).
+# 3. Метод loads принимает два параметра - data и content_type, и возвращает новый объект типа Serializer со сложным объектом внутри
+
+# import json
+# import pickle
+# serializers = {'json': json, 'pickle': pickle}
+# def get_method(content_type):
+#     return serializers[content_type]
+# a = {1:2, 3:4}
+# print(get_method('pickle').dumps(a))
