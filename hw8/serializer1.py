@@ -5,34 +5,27 @@
 import json
 import pickle
 
+serializers = {'json': json, 'pickle': pickle}
 class Serializer:
     def __init__(self, obj=None):
         self.obj = obj
 
+    def get_method(self, content_type):
+        return serializers.get(content_type)
+
     def dumps(self, content_type=None):
-        if content_type == 'json':
-            print(json.dumps(self.obj))
-        elif content_type == 'pickle':
-            print(pickle.dumps(self.obj))
-        else:
-            return
+        print(self.get_method(content_type).dumps(self.obj))
 
     def loads(self, data=None, content_type=None):
-        if content_type == 'json':
-            print(json.loads(data))
-        elif content_type == 'pickle':
-            print(pickle.loads(data))
-        else:
-            return
+        print(self.get_method(content_type).loads(data))
+
 d = Serializer()
-c = Serializer(obj={1:2})
+c = Serializer(obj={1: 2})
 
 print('-pickle example-')
 c.dumps(content_type='pickle')
 d.loads(data=b'\x80\x03}q\x00K\x01K\x02s.', content_type='pickle')
+
 print('-json example-')
 c.dumps(content_type='json')
 d.loads(data='{"1": 2}', content_type='json')
-
-
-# d.loads(data='[1,2]', content_type='json')
