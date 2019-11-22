@@ -1,29 +1,29 @@
 # # good example to practice MOR
-# class Parent1:
-#     def __init__(self):
-#         self.a = None
-#     def meth1(self):
-#         print('a')
-#         return self.a
-#
-#
-# class Parent2:
-#     def __init__(self):
-#         self.b = None
-#
-#     def meth2(self):
-#         print('b')
-#         return self.b
-#
-# class Child(Parent1,Parent2):
-#     def __init__(self):
-#         super(Child, self).__init__()
-#         Parent2.__init__(self)
-#
-# c = Child()
-# c.a = '2'
+class Parent1:
+    def __init__(self):
+        self.a = None
+    def meth1(self):
+        print('a')
+        return self.a
+
+
+class Parent2:
+    def __init__(self):
+        self.b = None
+
+    def meth2(self):
+        print('b')
+        return self.b
+
+class Child(Parent1,Parent2):
+    def __init__(self):
+        super(Child, self).__init__()
+        # Parent2.__init__(self)
+
+c = Child()
+c.a = '2'
 # c.b = 'c'
-# print(c.meth1())
+print(c.meth1())
 # print(c.meth2())
 
 
@@ -51,9 +51,11 @@
 #             print(c.name2, "wow!")
 #         else:
 #             print(c.name1, "4ik 4rik!")
+#             print(c.bird_name())
 # c = Pet(pet_type='bird')
 # c.pet_voice()
-#
+# # print(c.bird_name())
+
 # a = Animals()
 # print(a.animal_name())
 # print(Pet.__mro__)
@@ -62,4 +64,6 @@
 # print(c.bird_name())
 # print(c.animal_name())
 
-
+print((838873204 << 32) + 0)
+#
+print(( pow(2, 23) * 101 ) + 12430)
